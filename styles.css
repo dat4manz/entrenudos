@@ -175,24 +175,19 @@ h1, h2, h3, section {
 }
 
 .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: var(--font-size-2xl);
-    font-weight: 700;
-    color: var(--brown);
-    letter-spacing: 2px;
-    transition: var(--transition-fast);
     display: inline-flex;
     align-items: center;
+    transition: var(--transition-fast);
 }
 
 .logo img {
-    height: 300px;
+    height: 70px;
     width: auto;
 }
 
 @media (max-width: 768px) {
     .logo img {
-        height: 56px;
+        height: 48px;
     }
 }
 
@@ -340,31 +335,27 @@ h1, h2, h3, section {
     display: none;
 }
 
-.mobile-menu.active {
-    display: none;
-}
-
 @media (max-width: 768px) {
     .mobile-menu {
         display: flex;
         position: fixed;
-        top: 348px;
+        top: 0;
         left: 0;
         right: 0;
         background: var(--white);
         flex-direction: column;
         gap: var(--spacing-md);
         padding: var(--spacing-lg);
+        padding-top: calc(var(--spacing-lg) * 3 + 48px);
         z-index: 9999;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 4px 12px rgba(26, 20, 16, 0.1);
     }
 
     .mobile-menu.active {
-        display: flex;
         max-height: 500px;
-        box-shadow: 0 4px 12px rgba(26, 20, 16, 0.1);
     }
 }
 
