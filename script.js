@@ -161,6 +161,19 @@ if (cartDrawer) {
     });
 }
 
+// Event delegation para eliminar items del carrito
+if (cartItems) {
+    cartItems.addEventListener('click', (e) => {
+        const removeBtn = e.target.closest('.cart-item-remove');
+        if (removeBtn) {
+            const cartItem = removeBtn.closest('.cart-item');
+            const index = parseInt(cartItem.getAttribute('data-index'));
+            AppState.cartItems.splice(index, 1);
+            updateCartDisplay();
+        }
+    });
+}
+
 function updateCartDisplay() {
     if (!cartItems) return;
 
@@ -193,16 +206,6 @@ function updateCartDisplay() {
         `;
     }).join('');
 
-    // Event delegation para eliminar items
-    document.querySelectorAll('.cart-item-remove').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const cartItem = btn.closest('.cart-item');
-            const index = parseInt(cartItem.getAttribute('data-index'));
-            AppState.cartItems.splice(index, 1);
-            updateCartDisplay();
-        });
-    });
 
     const cartFooter = document.querySelector('.cart-footer');
     if (cartFooter) {
@@ -274,31 +277,19 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
 // QUICK ADD (TIENDA)
 // ==========================================
 
-// Click en foto para ir a producto
-document.querySelectorAll('.product-image').forEach(img => {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', (e) => {
-        const card = img.closest('.product-card');
-        const productId = card?.getAttribute('data-product-id');
-        const productUrl = card?.getAttribute('data-product-url') ||
-                          card?.querySelector('a')?.getAttribute('href') ||
-                          (productId ? `producto.html?id=${productId}` : null);
-
-        if (productUrl) {
-            window.location.href = productUrl;
+// Click en foto para ir a producto (cualquier lado excepto botón +)
+document.querySelectorAll('.product-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+        // Si hace click en el botón +, no navegar
+        if (e.target.closest('.quick-add-btn')) {
+            return;
         }
-    });
-});
 
-// Quick-add button (center button)
-document.querySelectorAll('.quick-add-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-
-        const card = btn.closest('.product-card');
-        const productId = card?.getAttribute('data-product-id');
-        const productUrl = card?.getAttribute('data-product-url') ||
-                          card?.querySelector('a')?.getAttribute('href') ||
+        // Si hace click en cualquier otro lado, navegar a producto
+        const productId = card.getAttribute('data-product-id');
+        const productUrl = card.getAttribute('data-product-url') ||
+                          card.querySelector('a')?.getAttribute('href') ||
                           (productId ? `producto.html?id=${productId}` : null);
 
         if (productUrl) {
