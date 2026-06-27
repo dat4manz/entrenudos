@@ -181,13 +181,13 @@ h1, h2, h3, section {
 }
 
 .logo img {
-    height: 70px;
+    height: 90px;
     width: auto;
 }
 
 @media (max-width: 768px) {
     .logo img {
-        height: 48px;
+        height: 64px;
     }
 }
 
@@ -537,6 +537,19 @@ h1, h2, h3, section {
 .btn-secondary-outline:hover {
     background: var(--brown);
     color: var(--white);
+}
+
+.btn-detalle {
+    background: var(--sage);
+    color: var(--white);
+    border: none;
+}
+
+.btn-detalle:hover {
+    background: var(--sage-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(107, 139, 126, 0.25);
 }
 
 /* ==========================================
