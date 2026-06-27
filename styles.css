@@ -134,9 +134,15 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-2xl);
     width: 100%;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
 }
 
 /* ==========================================
@@ -177,7 +183,7 @@ img {
 }
 
 .logo img {
-    height: 50px;
+    height: 56px;
     width: auto;
 }
 
