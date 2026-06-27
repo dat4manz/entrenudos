@@ -77,25 +77,52 @@
             }
         }
 
-        .color-selector {
+        .product-options {
             margin-top: var(--spacing-xl);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
         }
 
-        .color-label {
-            display: block;
-            margin-bottom: var(--spacing-md);
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .option-label {
             font-weight: 600;
             color: var(--ink);
+            font-size: 14px;
         }
 
-        .color-info {
+        .option-select {
             padding: var(--spacing-md);
-            background: var(--cream);
+            border: 1px solid rgba(26, 20, 16, 0.15);
             border-radius: var(--radius-lg);
-            margin-top: var(--spacing-md);
-            text-align: center;
-            font-weight: 500;
-            color: var(--brown);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--ink);
+            background: white;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .option-select:hover:not(:disabled) {
+            border-color: var(--brown);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .option-select:focus {
+            outline: none;
+            border-color: var(--brown);
+            box-shadow: 0 0 0 3px rgba(128, 150, 128, 0.1);
+        }
+
+        .option-select:disabled {
+            background: var(--cream);
+            color: rgba(26, 20, 16, 0.5);
+            cursor: not-allowed;
         }
 
         .product-details {
@@ -184,10 +211,36 @@
                 <div class="product-price-page" id="productPrice"></div>
                 <p id="productDescription" style="font-size: 15px; line-height: 1.8; margin: var(--spacing-lg) 0; color: rgba(26, 20, 16, 0.85);"></p>
 
-                <div class="color-selector">
-                    <label class="color-label">Selecciona una variante:</label>
-                    <p style="font-size: 14px; color: rgba(26, 20, 16, 0.75); margin-bottom: var(--spacing-md);">Haz click en las fotos para seleccionar el color/modelo</p>
-                    <div class="color-info" id="selectedColor">Selecciona una foto</div>
+                <div class="product-options">
+                    <!-- VARIANTE (FOTOS) -->
+                    <div class="option-group">
+                        <label for="variantSelect" class="option-label">Variante</label>
+                        <select id="variantSelect" class="option-select">
+                            <option value="">Selecciona una variante</option>
+                        </select>
+                        <p style="font-size: 13px; color: rgba(26, 20, 16, 0.6); margin-top: var(--spacing-sm);">O haz click en las fotos</p>
+                    </div>
+
+                    <!-- COLOR -->
+                    <div class="option-group">
+                        <label for="colorSelect" class="option-label">Color</label>
+                        <select id="colorSelect" class="option-select">
+                            <option value="">Selecciona un color</option>
+                            <option value="natural">Natural (Blanco crudo)</option>
+                            <option value="beige">Beige</option>
+                            <option value="gris">Gris</option>
+                            <option value="marron">Marrón</option>
+                        </select>
+                    </div>
+
+                    <!-- TAMAÑO -->
+                    <div class="option-group">
+                        <label for="sizeSelect" class="option-label">Tamaño</label>
+                        <select id="sizeSelect" class="option-select" disabled>
+                            <option value="">Próximamente</option>
+                        </select>
+                        <p style="font-size: 13px; color: rgba(26, 20, 16, 0.6); margin-top: var(--spacing-sm);">Los tamaños se definirán después</p>
+                    </div>
                 </div>
 
                 <button class="btn btn-primary add-to-cart-btn" id="addToCartBtn">Añadir al carrito</button>
@@ -232,6 +285,8 @@
     <script>
         let productoActual = null;
         let varianteSeleccionada = null;
+        let colorSeleccionado = null;
+        let tamanoSeleccionado = null;
 
         function loadProduct() {
             const params = new URLSearchParams(window.location.search);
@@ -267,6 +322,27 @@
                 thumbnailsContainer.appendChild(thumb);
             });
 
+            // Llenar select de variantes
+            const variantSelect = document.getElementById('variantSelect');
+            variantSelect.innerHTML = '<option value="">Selecciona una variante</option>';
+            productoActual.images.forEach((img, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `Variante ${index + 1}`;
+                variantSelect.appendChild(option);
+            });
+
+            variantSelect.addEventListener('change', (e) => {
+                if (e.target.value !== '') {
+                    selectImage(parseInt(e.target.value), productoActual.images[e.target.value]);
+                }
+            });
+
+            // Listeners para color y tamaño
+            document.getElementById('colorSelect').addEventListener('change', (e) => {
+                colorSeleccionado = e.target.value;
+            });
+
             // Cargar primera imagen
             selectImage(0, productoActual.images[0]);
 
@@ -277,7 +353,7 @@
         function selectImage(index, imageName) {
             varianteSeleccionada = { index, imageName };
             document.getElementById('mainImage').src = `${productoActual.folder}/${imageName}`;
-            document.getElementById('selectedColor').textContent = `Variante ${index + 1} de ${productoActual.images.length} seleccionada`;
+            document.getElementById('variantSelect').value = index;
 
             // Actualizar active thumbnail
             document.querySelectorAll('.thumbnail').forEach((t, i) => {
@@ -291,12 +367,22 @@
                 return;
             }
 
+            if (!colorSeleccionado) {
+                showToast('Por favor selecciona un color');
+                return;
+            }
+
+            const colorLabel = document.getElementById('colorSelect').selectedOptions[0].text;
+            const varianteNum = varianteSeleccionada.index + 1;
+
             const item = {
-                id: `${productoActual.nombre}-${varianteSeleccionada.index}`,
+                id: `${productoActual.nombre}-v${varianteNum}-${colorSeleccionado}`,
                 nombre: productoActual.nombre,
                 precio: productoActual.precio,
                 imagen: `${productoActual.folder}/${varianteSeleccionada.imageName}`,
-                variante: `Variante ${varianteSeleccionada.index + 1}`
+                variante: `Variante ${varianteNum}`,
+                color: colorLabel,
+                options: `Variante ${varianteNum} • ${colorLabel}`
             };
 
             ShopifyCart.addItem(item);
