@@ -164,13 +164,19 @@ if (cartDrawer) {
 function updateCartDisplay() {
     if (!cartItems) return;
 
+    // Actualizar contador
+    if (cartCount) {
+        const total = AppState.cartItems.reduce((sum, item) => sum + item.qty, 0);
+        cartCount.textContent = total;
+    }
+
     if (AppState.cartItems.length === 0) {
         cartItems.innerHTML = '<p style="text-align: center; padding: var(--spacing-2xl); color: var(--ink); opacity: 0.6;">Tu carrito está vacío</p>';
         return;
     }
 
     let total = 0;
-    cartItems.innerHTML = AppState.cartItems.map(item => {
+    cartItems.innerHTML = AppState.cartItems.map((item, index) => {
         total += item.price * item.qty;
         return `
             <div class="cart-item">
@@ -182,6 +188,7 @@ function updateCartDisplay() {
                     <div class="cart-item-price">€${(item.price * item.qty).toFixed(2)}</div>
                     <div style="font-size: 12px; color: var(--ink); opacity: 0.6;">Cantidad: ${item.qty}</div>
                 </div>
+                <button class="cart-item-remove" onclick="AppState.cartItems.splice(${index}, 1); updateCartDisplay();" style="background: none; border: none; color: var(--sage-dark); font-size: 20px; cursor: pointer; padding: 8px; transition: var(--transition-fast);" title="Eliminar">✕</button>
             </div>
         `;
     }).join('');

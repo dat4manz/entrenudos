@@ -191,6 +191,16 @@
             width: 100%;
             margin-top: var(--spacing-2xl);
             padding: var(--spacing-lg);
+            transition: var(--transition-fast);
+        }
+
+        .add-to-cart-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .add-to-cart-btn:not(:disabled) {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -364,14 +374,21 @@
                     // Añadir a este
                     swatch.classList.add('active');
                     colorSeleccionado = swatch.getAttribute('data-color');
+                    // Habilitar botón
+                    document.getElementById('addToCartBtn').disabled = false;
+                    console.log('Color seleccionado:', colorSeleccionado);
                 });
             });
 
             // Cargar primera imagen
             selectImage(0, productoActual.images[0]);
 
-            // Botón añadir al carrito
-            document.getElementById('addToCartBtn').onclick = () => addToCart();
+            // Botón añadir al carrito (deshabilitado al principio)
+            const addBtn = document.getElementById('addToCartBtn');
+            addBtn.disabled = true;
+            addBtn.style.opacity = '0.5';
+            addBtn.style.cursor = 'not-allowed';
+            addBtn.onclick = () => addToCart();
         }
 
         function selectImage(index, imageName) {
@@ -393,17 +410,14 @@
             const colorSwatch = document.querySelector(`.color-swatch.active`);
             const colorLabel = colorSwatch?.querySelector('.color-name')?.textContent || colorSeleccionado;
 
-            const item = {
-                id: `${productoActual.nombre}-${colorSeleccionado}`,
-                nombre: productoActual.nombre,
-                precio: productoActual.precio,
-                imagen: `${productoActual.folder}/${varianteSeleccionada.imageName}`,
-                color: colorLabel,
-                options: colorLabel
-            };
-
-            ShopifyCart.addItem(item);
-            showToast(`${productoActual.nombre} (${colorLabel}) añadido al carrito ✓`);
+            // Llamar ShopifyCart con los parámetros correctos
+            ShopifyCart.addItem(
+                `${productoActual.nombre}-${colorSeleccionado}`,  // productId
+                colorSeleccionado,                                 // variantId
+                1,                                                  // qty
+                `${productoActual.nombre} (${colorLabel})`,        // productName
+                productoActual.precio                             // price
+            );
         }
 
         // Cargar producto al abrir la página
