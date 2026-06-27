@@ -257,15 +257,6 @@
                 <p id="productDescription" style="font-size: 15px; line-height: 1.8; margin: var(--spacing-lg) 0; color: rgba(26, 20, 16, 0.85);"></p>
 
                 <div class="product-options">
-                    <!-- VARIANTE (FOTOS) -->
-                    <div class="option-group">
-                        <label for="variantSelect" class="option-label">Variante</label>
-                        <select id="variantSelect" class="option-select">
-                            <option value="">Selecciona una variante</option>
-                        </select>
-                        <p style="font-size: 13px; color: rgba(26, 20, 16, 0.6); margin-top: var(--spacing-sm);">O haz click en las fotos</p>
-                    </div>
-
                     <!-- COLOR -->
                     <div class="option-group">
                         <label class="option-label">Color</label>
@@ -283,15 +274,6 @@
                                 <span class="color-name">Marrón</span>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- TAMAÑO -->
-                    <div class="option-group">
-                        <label for="sizeSelect" class="option-label">Tamaño</label>
-                        <select id="sizeSelect" class="option-select" disabled>
-                            <option value="">Próximamente</option>
-                        </select>
-                        <p style="font-size: 13px; color: rgba(26, 20, 16, 0.6); margin-top: var(--spacing-sm);">Los tamaños se definirán después</p>
                     </div>
                 </div>
 
@@ -374,22 +356,6 @@
                 thumbnailsContainer.appendChild(thumb);
             });
 
-            // Llenar select de variantes
-            const variantSelect = document.getElementById('variantSelect');
-            variantSelect.innerHTML = '<option value="">Selecciona una variante</option>';
-            productoActual.images.forEach((img, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = `Variante ${index + 1}`;
-                variantSelect.appendChild(option);
-            });
-
-            variantSelect.addEventListener('change', (e) => {
-                if (e.target.value !== '') {
-                    selectImage(parseInt(e.target.value), productoActual.images[e.target.value]);
-                }
-            });
-
             // Listeners para colores (swatches)
             document.querySelectorAll('.color-swatch').forEach(swatch => {
                 swatch.addEventListener('click', () => {
@@ -411,7 +377,6 @@
         function selectImage(index, imageName) {
             varianteSeleccionada = { index, imageName };
             document.getElementById('mainImage').src = `${productoActual.folder}/${imageName}`;
-            document.getElementById('variantSelect').value = index;
 
             // Actualizar active thumbnail
             document.querySelectorAll('.thumbnail').forEach((t, i) => {
@@ -420,11 +385,6 @@
         }
 
         function addToCart() {
-            if (!varianteSeleccionada) {
-                showToast('Por favor selecciona una variante');
-                return;
-            }
-
             if (!colorSeleccionado) {
                 showToast('Por favor selecciona un color');
                 return;
@@ -432,20 +392,18 @@
 
             const colorSwatch = document.querySelector(`.color-swatch.active`);
             const colorLabel = colorSwatch?.querySelector('.color-name')?.textContent || colorSeleccionado;
-            const varianteNum = varianteSeleccionada.index + 1;
 
             const item = {
-                id: `${productoActual.nombre}-v${varianteNum}-${colorSeleccionado}`,
+                id: `${productoActual.nombre}-${colorSeleccionado}`,
                 nombre: productoActual.nombre,
                 precio: productoActual.precio,
                 imagen: `${productoActual.folder}/${varianteSeleccionada.imageName}`,
-                variante: `Variante ${varianteNum}`,
                 color: colorLabel,
-                options: `Variante ${varianteNum} • ${colorLabel}`
+                options: colorLabel
             };
 
             ShopifyCart.addItem(item);
-            showToast(`${productoActual.nombre} añadido al carrito ✓`);
+            showToast(`${productoActual.nombre} (${colorLabel}) añadido al carrito ✓`);
         }
 
         // Cargar producto al abrir la página
