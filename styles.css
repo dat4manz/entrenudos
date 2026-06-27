@@ -329,15 +329,16 @@ img {
 
 .mobile-menu {
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;
     right: 0;
     background: var(--white);
+    display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
-    z-index: 99;
+    z-index: 200;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
