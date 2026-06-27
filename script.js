@@ -33,7 +33,8 @@ const mobileMenu = document.getElementById('mobileMenu');
 const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
 if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         mobileMenu.classList.toggle('active');
     });
 }
@@ -47,8 +48,12 @@ if (mobileNavLinks.length > 0) {
 }
 
 document.addEventListener('click', (e) => {
-    const isHeader = e.target.closest('.header');
-    if (!isHeader && mobileMenu && mobileMenu.classList.contains('active')) {
+    if (
+        mobileMenu &&
+        mobileMenu.classList.contains('active') &&
+        !mobileMenu.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ) {
         mobileMenu.classList.remove('active');
     }
 });
