@@ -65,6 +65,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -167,11 +172,18 @@ img {
     color: var(--brown);
     letter-spacing: 2px;
     transition: var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
 }
 
 .logo:hover {
     color: var(--terracota);
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .nav {
@@ -310,9 +322,8 @@ img {
    ========================================== */
 
 .mobile-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     background: var(--white);
@@ -320,10 +331,14 @@ img {
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
+    z-index: 99;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
 }
 
 .mobile-menu.active {
-    display: flex;
+    max-height: 300px;
 }
 
 .mobile-nav-link {
@@ -331,6 +346,22 @@ img {
     color: var(--ink);
     font-weight: 500;
     padding: var(--spacing-sm) 0;
+}
+
+/* ==========================================
+   COLECCIONES GRID
+   ========================================== */
+
+.colecciones-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+}
+
+@media (max-width: 768px) {
+    .colecciones-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================
@@ -1904,6 +1935,10 @@ img {
 }
 
 @media (max-width: 768px) {
+    .artisan-intro {
+        display: none;
+    }
+
     .nav {
         display: none;
     }
