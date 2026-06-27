@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsos Artesanales — EntreNudos</title>
+    <meta name="description" content="Colecciones de bolsos artesanales: Boho y Chic. Diseño único, fibra natural.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237C5C3E'>◉</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo"><img src="img/logo1.jpeg" alt="EntreNudos Logo" style="height: 40px; width: auto;"></a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="bolsos.html" class="nav-link active">Bolsos</a>
+                    <a href="accesorios.html" class="nav-link">Accesorios</a>
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                    <a href="index.html#contacto" class="nav-link">Contacto</a>
+                </nav>
+                <div class="header-right">
+                    <div class="cart-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2H4L5.2 11H17L18.7 4H6M5.5 15C5.5 15.8284 4.82843 16.5 4 16.5C3.17157 16.5 2.5 15.8284 2.5 15C2.5 14.1716 3.17157 13.5 4 13.5C4.82843 13.5 5.5 14.1716 5.5 15ZM16.5 15C16.5 15.8284 15.8284 16.5 15 16.5C14.1716 16.5 13.5 15.8284 13.5 15C13.5 14.1716 14.1716 13.5 15 13.5C15.8284 13.5 16.5 14.1716 16.5 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-content">
+            <div class="trust-item">Hecho a mano en Madrid</div>
+            <div class="trust-item">Fibra 100% natural</div>
+            <div class="trust-item">Envío en 5-7 días</div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Inicio</a>
+        <a href="bolsos.html" class="mobile-nav-link">Bolsos</a>
+        <a href="accesorios.html" class="mobile-nav-link">Accesorios</a>
+        <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+        <a href="index.html#contacto" class="mobile-nav-link">Contacto</a>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="container" style="padding: var(--spacing-3xl) 0; text-align: center;">
+        <h1 style="font-size: 48px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Bolsos Artesanales</h1>
+        <p style="font-size: 18px; color: rgba(26, 20, 16, 0.75); line-height: 1.8; max-width: 600px; margin: 0 auto;">Cada pieza cuenta una historia. Colecciones únicas diseñadas para ti con fibra 100% natural.</p>
+    </section>
+
+    <!-- COLECCIÓN BOHO -->
+    <section class="container" style="padding: var(--spacing-3xl) 0;">
+        <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <h2 style="font-size: 36px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Colección Boho</h2>
+            <p style="font-size: 16px; color: rgba(26, 20, 16, 0.75); line-height: 1.8;">Artesanía auténtica, diseño editorial, fibra 100% natural.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- BEA -->
+            <div class="product-card" data-category="bolsos-boho" data-product-id="bolso-bea">
+                <div class="product-image">
+                    <img src="img/Bolso Boho/Bolso Bea/IMG_0627.jpeg" alt="Bolso Bea">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Bolso Artesanal</p>
+                    <h3 class="product-title">Bea — El Boho Auténtico</h3>
+                    <p class="product-description" style="font-size: 14px; color: rgba(26, 20, 16, 0.75); margin: var(--spacing-md) 0;">El bolso que define lo artesanal. Textura tejida a mano, detalles únicos, perfecto para quién busca autenticidad.</p>
+                    <p class="product-price">€95</p>
+                    <a href="producto.html?id=bea" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-md);">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- CAMI -->
+            <div class="product-card" data-category="bolsos-boho" data-product-id="bolso-cami">
+                <div class="product-image">
+                    <img src="img/Bolso Boho/bolso cami/IMG_0547.jpeg" alt="Bolso Cami">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Bolso Artesanal</p>
+                    <h3 class="product-title">Cami — El Clásico Reinventado</h3>
+                    <p class="product-description" style="font-size: 14px; color: rgba(26, 20, 16, 0.75); margin: var(--spacing-md) 0;">Moderno pero con raíces. Estructura versátil, colores tierra, diseño que funciona para cualquier look.</p>
+                    <p class="product-price">€89</p>
+                    <a href="producto.html?id=cami" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-md);">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COLECCIÓN CHIC -->
+    <section class="container" style="padding: var(--spacing-3xl) 0;">
+        <div style="text-align: center; margin-bottom: var(--spacing-3xl);">
+            <h2 style="font-size: 36px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Colección Chic</h2>
+            <p style="font-size: 16px; color: rgba(26, 20, 16, 0.75); line-height: 1.8;">Minimalismo sofisticado. Estructura, elegancia, precisión.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- AMANDA -->
+            <div class="product-card" data-category="bolsos-chic" data-product-id="bolso-amanda">
+                <div class="product-image">
+                    <img src="img/Bolso Chic/Bolso Amanda/IMG_0589.jpeg" alt="Bolso Amanda">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Bolso Chic</p>
+                    <h3 class="product-title">Amanda — Estructura y Elegancia</h3>
+                    <p class="product-description" style="font-size: 14px; color: rgba(26, 20, 16, 0.75); margin: var(--spacing-md) 0;">Líneas limpias, proporciones perfectas. Un bolso que comunica refinamiento sin decir palabra.</p>
+                    <p class="product-price">€105</p>
+                    <a href="producto.html?id=amanda" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-md);">Ver detalles</a>
+                </div>
+            </div>
+
+            <!-- JESS -->
+            <div class="product-card" data-category="bolsos-chic" data-product-id="bolso-jess">
+                <div class="product-image">
+                    <img src="img/Bolso Chic/Bolso Jess/IMG_0711.jpeg" alt="Bolso Jess">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Bolso Chic</p>
+                    <h3 class="product-title">Jess — Minimalista Sofisticada</h3>
+                    <p class="product-description" style="font-size: 14px; color: rgba(26, 20, 16, 0.75); margin: var(--spacing-md) 0;">Lo que siempre buscaste. Menos detalles, más impacto. Un bolso que habla de quién lo lleva.</p>
+                    <p class="product-price">€98</p>
+                    <a href="producto.html?id=jess" class="btn btn-secondary" style="width: 100%; margin-top: var(--spacing-md);">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA PERSONALIZACIÓN -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>¿Necesitas algo personalizado?</h2>
+            <p>Creamos bolsos a medida según tus especificaciones.</p>
+            <a href="index.html#contacto" class="btn btn-secondary-outline" style="border-color: white; color: white;">Solicitar Personalización</a>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div>
+                    <h3 class="newsletter-title">Únete y entérate de nuevas piezas antes que nadie</h3>
+                    <p class="newsletter-subtitle">Solo novedades, sin spam.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Suscripción confirmada!');">
+                    <input type="email" placeholder="Tu email" required class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EntreNudos</h4>
+                    <p>Creaciones únicas en macramé artesanal. Piezas boho hechas a mano con fibra natural.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="bolsos.html">Bolsos</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Envíos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EntreNudos. Todos los derechos reservados.</p>
+                <p>Hecho con <span style="color: var(--terracota);">♥</span> en Madrid</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close">✕</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span>€0.00</span></div>
+            <button class="btn btn-primary">Ir al checkout</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>

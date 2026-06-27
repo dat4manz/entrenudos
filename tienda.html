@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección — EntreNudos</title>
+    <meta name="description" content="Catálogo completo de macramé artesanal con filtros por categoría.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237C5C3E'>◉</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo"><img src="img/logo1.jpeg" alt="EntreNudos Logo" style="height: 40px; width: auto;"></a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="bolsos.html" class="nav-link">Bolsos</a>
+                    <a href="accesorios.html" class="nav-link">Accesorios</a>
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                    <a href="index.html#contacto" class="nav-link">Contacto</a>
+                </nav>
+                <div class="header-right">
+                    <div class="cart-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2H4L5.2 11H17L18.7 4H6M5.5 15C5.5 15.8284 4.82843 16.5 4 16.5C3.17157 16.5 2.5 15.8284 2.5 15C2.5 14.1716 3.17157 13.5 4 13.5C4.82843 13.5 5.5 14.1716 5.5 15ZM16.5 15C16.5 15.8284 15.8284 16.5 15 16.5C14.1716 16.5 13.5 15.8284 13.5 15C13.5 14.1716 14.1716 13.5 15 13.5C15.8284 13.5 16.5 14.1716 16.5 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="trust-strip">
+        <div class="trust-content">
+            <div class="trust-item">Hecho a mano en Madrid</div>
+            <div class="trust-item">Fibra 100% natural</div>
+            <div class="trust-item">Envío en 5-7 días</div>
+        </div>
+    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Inicio</a>
+        <a href="bolsos.html" class="mobile-nav-link">Bolsos</a>
+        <a href="accesorios.html" class="mobile-nav-link">Accesorios</a>
+        <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+        <a href="index.html#contacto" class="mobile-nav-link">Contacto</a>
+    </nav>
+
+    <section class="container" style="padding: var(--spacing-3xl) 0;">
+        <h1 style="font-size: 48px; color: var(--brown); text-align: center; margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Colección Completa</h1>
+        <p style="font-size: 16px; color: var(--ink); opacity: 0.6; text-align: center; margin-bottom: var(--spacing-3xl);">Explora todas nuestras creaciones artesanales</p>
+
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="colgantes">Colgantes</button>
+            <button class="filter-btn" data-category="tapices">Tapices</button>
+            <button class="filter-btn" data-category="maceteros">Maceteros</button>
+            <button class="filter-btn" data-category="atrapasueños">Atrapasueños</button>
+            <button class="filter-btn" data-category="cortinas">Cortinas</button>
+        </div>
+
+        <p class="products-counter" style="text-align: center; font-size: 13px; color: var(--ink); opacity: 0.6; margin-bottom: var(--spacing-2xl); text-transform: uppercase; letter-spacing: 1px;">Mostrando 13 de 13 productos</p>
+
+        <div class="products-grid">
+            <div class="product-card" data-category="colgantes" data-product-url="producto.html?id=1" data-product-id="colgante-001">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto colgante 1</div>
+                </div>
+                <div class="product-info"><p class="product-category">Colgante</p><h3 class="product-title">Onda Natural</h3><p class="product-price">€48</p></div>
+            </div>
+
+            <div class="product-card" data-category="colgantes" data-product-url="producto.html?id=2" data-product-id="colgante-002">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto colgante 2</div>
+                </div>
+                <div class="product-info"><p class="product-category">Colgante</p><h3 class="product-title">Minimalista Beige</h3><p class="product-price">€35</p></div>
+            </div>
+
+            <div class="product-card" data-category="colgantes" data-product-url="producto.html?id=3" data-product-id="colgante-003">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto colgante 3</div>
+                </div>
+                <div class="product-info"><p class="product-category">Colgante</p><h3 class="product-title">Flecos Largos</h3><p class="product-price">€52</p></div>
+            </div>
+
+            <div class="product-card" data-category="tapices" data-product-url="producto.html?id=4" data-product-id="tapiz-001">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto tapiz 1</div>
+                </div>
+                <div class="product-info"><p class="product-category">Tapiz</p><h3 class="product-title">Geométrico Grande</h3><p class="product-price">€75</p></div>
+            </div>
+
+            <div class="product-card" data-category="tapices" data-product-url="producto.html?id=5" data-product-id="tapiz-002">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto tapiz 2</div>
+                </div>
+                <div class="product-info"><p class="product-category">Tapiz</p><h3 class="product-title">Patrón Boho</h3><p class="product-price">€82</p></div>
+            </div>
+
+            <div class="product-card" data-category="tapices" data-product-url="producto.html?id=6" data-product-id="tapiz-003">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto tapiz 3</div>
+                </div>
+                <div class="product-info"><p class="product-category">Tapiz</p><h3 class="product-title">Ondas Naturales</h3><p class="product-price">€68</p></div>
+            </div>
+
+            <div class="product-card" data-category="maceteros" data-product-url="producto.html?id=7" data-product-id="macetero-001">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto macetero 1</div>
+                </div>
+                <div class="product-info"><p class="product-category">Macetero</p><h3 class="product-title">Plantero Suspendido</h3><p class="product-price">€35</p></div>
+            </div>
+
+            <div class="product-card" data-category="maceteros" data-product-url="producto.html?id=8" data-product-id="macetero-002">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto macetero 2</div>
+                </div>
+                <div class="product-info"><p class="product-category">Macetero</p><h3 class="product-title">Maceta Doble</h3><p class="product-price">€45</p></div>
+            </div>
+
+            <div class="product-card" data-category="maceteros" data-product-url="producto.html?id=9" data-product-id="macetero-003">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto macetero 3</div>
+                </div>
+                <div class="product-info"><p class="product-category">Macetero</p><h3 class="product-title">Colgador Triple</h3><p class="product-price">€58</p></div>
+            </div>
+
+            <div class="product-card" data-category="atrapasueños" data-product-url="producto.html?id=10" data-product-id="atrapasueños-001">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto atrapasueños 1</div>
+                </div>
+                <div class="product-info"><p class="product-category">Atrapasueños</p><h3 class="product-title">Boho Natural</h3><p class="product-price">€55</p></div>
+            </div>
+
+            <div class="product-card" data-category="atrapasueños" data-product-url="producto.html?id=11" data-product-id="atrapasueños-002">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto atrapasueños 2</div>
+                </div>
+                <div class="product-info"><p class="product-category">Atrapasueños</p><h3 class="product-title">Con Cuentas</h3><p class="product-price">€62</p></div>
+            </div>
+
+            <div class="product-card" data-category="cortinas" data-product-url="producto.html?id=12" data-product-id="cortina-001">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto cortina 1</div>
+                </div>
+                <div class="product-info"><p class="product-category">Cortina</p><h3 class="product-title">Divisoria Macramé</h3><p class="product-price">€95</p></div>
+            </div>
+
+            <div class="product-card" data-category="cortinas" data-product-url="producto.html?id=13" data-product-id="cortina-002">
+                <div class="product-image">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                    <div class="placeholder">Foto cortina 2</div>
+                </div>
+                <div class="product-info"><p class="product-category">Cortina</p><h3 class="product-title">Cortina Flecos</h3><p class="product-price">€85</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <h2>¿No encuentras lo que buscas?</h2>
+            <p>Podemos crear piezas personalizadas a medida de tus preferencias.</p>
+            <a href="index.html#contacto" class="btn btn-secondary-outline" style="border-color: white; color: white;">Solicitar Personalización</a>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTATION -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div>
+                    <h3 class="newsletter-title">Únete y entérate de nuevas piezas antes que nadie</h3>
+                    <p class="newsletter-subtitle">Solo novedades, sin spam.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Suscripción confirmada!');">
+                    <input type="email" placeholder="Tu email" required class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h4>EntreNudos</h4><p>Creaciones únicas en macramé artesanal. Piezas boho hechas a mano con fibra natural.</p></div>
+                <div class="footer-section"><h4>Enlaces</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="tienda.html">Colección</a></li><li><a href="nosotros.html">Nosotros</a></li><li><a href="index.html#contacto">Contacto</a></li></ul></div>
+                <div class="footer-section"><h4>Legal</h4><ul><li><a href="#">Política de Privacidad</a></li><li><a href="#">Términos y Condiciones</a></li><li><a href="#">Política de Devoluciones</a></li><li><a href="#">Envíos</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 EntreNudos. Todos los derechos reservados.</p><p>Hecho con <span style="color: var(--terracota);">♥</span> en Madrid</p></div>
+        </div>
+    </footer>
+
+    <div class="cart-drawer">
+        <div class="cart-header"><h3>Tu Carrito</h3><button class="cart-close">✕</button></div>
+        <div class="cart-items"></div>
+        <div class="cart-footer"><div class="cart-total"><span>Total</span><span>€0.00</span></div><button class="btn btn-primary">Ir al checkout</button></div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

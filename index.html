@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EntreNudos — Macramé Artesanal Premium</title>
+    <meta name="description" content="Creaciones únicas en macramé artesanal. Piezas boho premium hechas a mano con fibra 100% natural.">
+    <meta name="keywords" content="macramé artesanal, boho, colgantes, tapices, decoración, fibra natural">
+    <meta property="og:title" content="EntreNudos — Macramé Artesanal">
+    <meta property="og:description" content="Piezas únicas de macramé hechas a mano.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237C5C3E'>◉</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo"><img src="img/logo1.jpeg" alt="EntreNudos Logo" style="height: 40px; width: auto;"></a>
+
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="bolsos.html" class="nav-link">Bolsos</a>
+                    <a href="accesorios.html" class="nav-link">Accesorios</a>
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+
+                <div class="header-right">
+                    <div class="cart-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2H4L5.2 11H17L18.7 4H6M5.5 15C5.5 15.8284 4.82843 16.5 4 16.5C3.17157 16.5 2.5 15.8284 2.5 15C2.5 14.1716 3.17157 13.5 4 13.5C4.82843 13.5 5.5 14.1716 5.5 15ZM16.5 15C16.5 15.8284 15.8284 16.5 15 16.5C14.1716 16.5 13.5 15.8284 13.5 15C13.5 14.1716 14.1716 13.5 15 13.5C15.8284 13.5 16.5 14.1716 16.5 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-content">
+            <div class="trust-item">Hecho a mano en Madrid</div>
+            <div class="trust-item">Fibra 100% natural</div>
+            <div class="trust-item">Envío en 5-7 días</div>
+        </div>
+    </div>
+
+    <!-- MENÚ MOBILE -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Inicio</a>
+        <a href="bolsos.html" class="mobile-nav-link">Bolsos</a>
+        <a href="accesorios.html" class="mobile-nav-link">Accesorios</a>
+        <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+        <a href="#contacto" class="mobile-nav-link">Contacto</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero container">
+        <div class="hero-content">
+            <h1 class="hero-title">Cada nudo cuenta una historia</h1>
+            <p class="hero-subtitle">Creaciones únicas en macramé artesanal. Piezas boho hechas a mano con amor y fibra natural.</p>
+            <a href="#colecciones" class="btn btn-primary">Explorar Colección →</a>
+        </div>
+        <div class="hero-image">
+            <img src="img/portada.png" alt="EntreNudos Portada" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);">
+        </div>
+    </section>
+
+    <!-- ARTESANA PRESENTACIÓN -->
+    <section class="artisan-intro container">
+        <div class="artisan-image">
+            <img src="img/Nia.jpeg" alt="Nia, creadora de EntreNudos">
+        </div>
+        <div class="artisan-content">
+            <h2 style="font-size: 32px; color: var(--brown); margin-bottom: var(--spacing-lg); font-family: 'Cormorant Garamond', serif;">Hola, soy Nia</h2>
+            <p style="font-size: 16px; line-height: 1.8; margin-bottom: var(--spacing-lg); color: rgba(26, 20, 16, 0.85);">Llevo 5 años anudando historias en fibra natural. Cada pieza que creo es un pequeño ritual de meditación, paciencia y dedicación.</p>
+            <p style="font-size: 15px; line-height: 1.8; color: rgba(26, 20, 16, 0.75);">Creo en hacer las cosas lentamente, sin prisa. En usar solo materiales que respeten el planeta. En crear objetos que duren generaciones y que conecten con la naturaleza.</p>
+        </div>
+    </section>
+
+    <!-- SELECTOR DE CATEGORÍAS -->
+    <section id="colecciones" class="container" style="padding: var(--spacing-3xl) 0;">
+        <h2 class="section-title">Explora Nuestras Colecciones</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-2xl);">
+            <!-- BOLSOS -->
+            <a href="bolsos.html" style="text-decoration: none;">
+                <div style="background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%); padding: var(--spacing-3xl); border-radius: var(--radius-lg); text-align: center; transition: var(--transition); cursor: pointer; border: 1px solid rgba(26, 20, 16, 0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-xl)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)';">
+                    <h3 style="font-size: 28px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Bolsos Artesanales</h3>
+                    <p style="font-size: 15px; color: rgba(26, 20, 16, 0.75); line-height: 1.8;">Colecciones Boho y Chic. Diseño único hecho a mano.</p>
+                </div>
+            </a>
+
+            <!-- ACCESORIOS -->
+            <a href="accesorios.html" style="text-decoration: none;">
+                <div style="background: linear-gradient(135deg, var(--cream) 0%, var(--beige) 100%); padding: var(--spacing-3xl); border-radius: var(--radius-lg); text-align: center; transition: var(--transition); cursor: pointer; border: 1px solid rgba(26, 20, 16, 0.05);" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='var(--shadow-xl)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-md)';">
+                    <h3 style="font-size: 28px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif;">Accesorios Artesanales</h3>
+                    <p style="font-size: 15px; color: rgba(26, 20, 16, 0.75); line-height: 1.8;">Llaveros, pompones, portalabios. Detalles que completan tu estilo.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="values">
+        <div class="container">
+            <p class="values-intro">Sostenibilidad, artesanía y diseño en cada creación.</p>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Fibra Natural</h3>
+                    <p>100% algodón orgánico y yute. Sostenible y duradero.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Hecho a Mano</h3>
+                    <p>Cada pieza elaborada nudo a nudo con dedicación artesanal.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Diseño Único</h3>
+                    <p>Sin producción en serie. Piezas exclusivas y personalizables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS DESTACADOS -->
+    <section class="container">
+        <h2 class="section-title">Piezas Destacadas</h2>
+
+        <div class="products-grid asymmetric">
+            <div class="product-card" data-category="colgantes" data-product-url="producto.html?id=1" data-product-id="colgante-001" data-variant-id="natural">
+                <div class="product-image">
+                    <img src="img/Bolso Boho/Bolso Bea/IMG_0627.jpeg" alt="Bolso Bea">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Colgante</p>
+                    <h3 class="product-title">Onda Natural</h3>
+                    <p class="product-price">€48</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="maceteros" data-product-url="producto.html?id=2" data-product-id="macetero-001" data-variant-id="natural">
+                <div class="product-image">
+                    <img src="img/Llaveros/llavero espiral/IMG_0958.jpeg" alt="Llavero">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Macetero</p>
+                    <h3 class="product-title">Plantero Suspendido</h3>
+                    <p class="product-price">€35</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="colgantes" data-product-url="producto.html?id=3" data-product-id="colgante-002" data-variant-id="natural">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0981.jpeg" alt="Pompón">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Colgante</p>
+                    <h3 class="product-title">Atrapasueños Boho</h3>
+                    <p class="product-price">€55</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="tapices" data-product-url="producto.html?id=4" data-product-id="tapiz-001" data-variant-id="natural">
+                <div class="product-image">
+                    <img src="img/Bolso Chic/Bolso Jess/IMG_0711.jpeg" alt="Bolso Jess">
+                    <div class="product-image-overlay">
+                        <button class="quick-add-btn">+</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Tapiz</p>
+                    <h3 class="product-title">Tapiz Geométrico</h3>
+                    <p class="product-price">€75</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: var(--spacing-lg); justify-content: center; margin-top: var(--spacing-3xl); flex-wrap: wrap;">
+            <a href="bolsos.html" class="btn btn-secondary">Ver Bolsos →</a>
+            <a href="accesorios.html" class="btn btn-secondary">Ver Accesorios →</a>
+        </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="history-section container">
+        <div class="history-image">
+            <img src="img/Bolso Chic/Bolso Jess/IMG_0711.jpeg" alt="Historia de EntreNudos">
+        </div>
+        <div>
+            <h2 style="font-size: 32px; color: var(--brown); margin-bottom: var(--spacing-lg); font-family: 'Cormorant Garamond', serif;">Nuestra Historia</h2>
+            <p style="font-size: 15px; line-height: 1.8; margin-bottom: var(--spacing-md);">Cada nudo es un acto de meditación. Comenzamos esta aventura con una pasión simple: crear piezas únicas que conecten a las personas con la naturaleza y el arte hecho a mano.</p>
+            <p style="font-size: 15px; line-height: 1.8; margin-bottom: var(--spacing-md);">Utilizamos solo fibras naturales —algodón orgánico, yute y cáñamo— porque creemos en la sostenibilidad y la durabilidad como filosofía de vida.</p>
+            <p style="font-size: 15px; line-height: 1.8;">Cada macramé es una historia única entre nosotros y tú. Sin producción en serie. Sin atajos.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="container" style="margin: var(--spacing-3xl) 0;">
+        <h2 style="font-size: 32px; color: var(--brown); text-align: left; margin-bottom: var(--spacing-2xl); font-family: 'Cormorant Garamond', serif;">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-section">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-photo"></div>
+                    <div>
+                        <p class="testimonial-author">María González</p>
+                        <p class="testimonial-location">Valencia</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">«El colgante llegó más bonito de lo que esperaba. La calidad es increíble. Ya es parte de mi salón.»</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-photo"></div>
+                    <div>
+                        <p class="testimonial-author">Laura Fernández</p>
+                        <p class="testimonial-location">Barcelona</p>
+                    </div>
+                </div>
+                <p class="testimonial-text">«Atención personalizada desde el primer email. El tapiz es una obra maestra. Volveré a comprar sin dudarlo.»</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA PERSONALIZACIÓN -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>¿Buscas algo personalizado?</h2>
+            <p>Creamos diseños a medida según tus especificaciones y preferencias.</p>
+            <a href="#contacto" class="btn btn-secondary-outline" style="border-color: white; color: white;">Solicitar Personalización</a>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="container">
+        <h2 class="section-title" style="margin-top: var(--spacing-3xl);">Contacto</h2>
+
+        <div class="contact-section">
+            <form class="contact-form" onsubmit="event.preventDefault(); showToast('Mensaje enviado correctamente ✓');">
+                <div class="form-group">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Mensaje</label>
+                    <textarea class="form-textarea" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar</button>
+            </form>
+
+            <div class="contact-info">
+                <h3>Información</h3>
+
+                <div class="info-item">
+                    <p class="info-label">Email</p>
+                    <p class="info-value"><a href="mailto:info@entrenudos.com">info@entrenudos.com</a></p>
+                </div>
+
+                <div class="info-item">
+                    <p class="info-label">Teléfono</p>
+                    <p class="info-value"><a href="tel:+34600000000">+34 600 000 000</a></p>
+                </div>
+
+                <div class="info-item">
+                    <p class="info-label">Ubicación</p>
+                    <p class="info-value">Madrid, España</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTATION -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div>
+                    <h3 class="newsletter-title">Únete y entérate de nuevas piezas antes que nadie</h3>
+                    <p class="newsletter-subtitle">Solo novedades, sin spam.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Suscripción confirmada!');">
+                    <input type="email" placeholder="Tu email" required class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EntreNudos</h4>
+                    <p>Creaciones únicas en macramé artesanal. Piezas boho hechas a mano con fibra natural.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="bolsos.html">Bolsos</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Envíos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EntreNudos. Todos los derechos reservados.</p>
+                <p>Hecho con <span style="color: var(--terracota);">♥</span> en Madrid</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close">✕</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span>€0.00</span></div>
+            <button class="btn btn-primary">Ir al checkout</button>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

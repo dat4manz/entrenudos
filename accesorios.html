@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios Artesanales — EntreNudos</title>
+    <meta name="description" content="Accesorios artesanales: Llaveros, pompones, portalabiales. Fibra natural.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%237C5C3E'>◉</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo"><img src="img/logo1.jpeg" alt="EntreNudos Logo" style="height: 40px; width: auto;"></a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="bolsos.html" class="nav-link">Bolsos</a>
+                    <a href="accesorios.html" class="nav-link active">Accesorios</a>
+                    <a href="nosotros.html" class="nav-link">Nosotros</a>
+                    <a href="index.html#contacto" class="nav-link">Contacto</a>
+                </nav>
+                <div class="header-right">
+                    <div class="cart-icon">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 2H4L5.2 11H17L18.7 4H6M5.5 15C5.5 15.8284 4.82843 16.5 4 16.5C3.17157 16.5 2.5 15.8284 2.5 15C2.5 14.1716 3.17157 13.5 4 13.5C4.82843 13.5 5.5 14.1716 5.5 15ZM16.5 15C16.5 15.8284 15.8284 16.5 15 16.5C14.1716 16.5 13.5 15.8284 13.5 15C13.5 14.1716 14.1716 13.5 15 13.5C15.8284 13.5 16.5 14.1716 16.5 15Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST STRIP -->
+    <div class="trust-strip">
+        <div class="trust-content">
+            <div class="trust-item">Hecho a mano en Madrid</div>
+            <div class="trust-item">Fibra 100% natural</div>
+            <div class="trust-item">Envío en 5-7 días</div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Inicio</a>
+        <a href="bolsos.html" class="mobile-nav-link">Bolsos</a>
+        <a href="accesorios.html" class="mobile-nav-link">Accesorios</a>
+        <a href="nosotros.html" class="mobile-nav-link">Nosotros</a>
+        <a href="index.html#contacto" class="mobile-nav-link">Contacto</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="container" style="padding: var(--spacing-3xl) 0;">
+        <h1 style="font-size: 48px; color: var(--brown); margin-bottom: var(--spacing-md); font-family: 'Cormorant Garamond', serif; text-align: left;">Accesorios Artesanales</h1>
+        <p style="font-size: 18px; color: rgba(26, 20, 16, 0.75); line-height: 1.8; margin-bottom: var(--spacing-2xl);">Detalles que completan tu estilo. Cada accesorio es una declaración de autenticidad.</p>
+    </section>
+
+    <!-- FILTROS -->
+    <section class="container" style="padding: 0 0 var(--spacing-2xl) 0;">
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">Todos</button>
+            <button class="filter-btn" data-category="llaveros">Llaveros</button>
+            <button class="filter-btn" data-category="pompones">Pompones</button>
+            <button class="filter-btn" data-category="portalabiales">Portalabios</button>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS GRID -->
+    <section class="container" style="padding: 0 0 var(--spacing-3xl) 0;">
+        <div class="products-grid">
+            <!-- LLAVEROS (7 productos reales) -->
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-1">
+                <div class="product-image">
+                    <img src="img/Llaveros/llavero espiral/IMG_0958.jpeg" alt="Llavero 1">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Espiral</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-2">
+                <div class="product-image">
+                    <img src="img/Llaveros/llavero espiral/IMG_0959.jpeg" alt="Llavero 2">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Textura</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-3">
+                <div class="product-image">
+                    <img src="img/Llaveros/llavero espiral/IMG_0960.jpeg" alt="Llavero 3">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Boho</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-4">
+                <div class="product-image">
+                    <img src="img/Llaveros/llaveros flecha/IMG_0936.jpeg" alt="Llavero 4">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Flecha</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-5">
+                <div class="product-image">
+                    <img src="img/Llaveros/llaveros flecha/IMG_0942.jpeg" alt="Llavero 5">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Geométrico</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-6">
+                <div class="product-image">
+                    <img src="img/Llaveros/llaveros flecha/IMG_0945.jpeg" alt="Llavero 6">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Minimalista</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="llaveros" data-product-id="llavero-7">
+                <div class="product-image">
+                    <img src="img/Llaveros/llaveros nudo plano/IMG_0948.jpeg" alt="Llavero 7">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Llavero</p>
+                    <h3 class="product-title">Llavero Nudo</h3>
+                    <p class="product-price">€15</p>
+                </div>
+            </div>
+
+            <!-- POMPONES (10 productos reales) -->
+            <div class="product-card" data-category="pompones" data-product-id="pompon-1">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0981.jpeg" alt="Pompón 1">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #1</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-2">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0983.jpeg" alt="Pompón 2">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #2</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-3">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0984.jpeg" alt="Pompón 3">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #3</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-4">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0985.jpeg" alt="Pompón 4">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #4</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-5">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0986.jpeg" alt="Pompón 5">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #5</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-6">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0988.jpeg" alt="Pompón 6">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #6</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-7">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0989.jpeg" alt="Pompón 7">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #7</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-8">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0990.jpeg" alt="Pompón 8">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #8</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-9">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0991.jpeg" alt="Pompón 9">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #9</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="pompones" data-product-id="pompon-10">
+                <div class="product-image">
+                    <img src="img/Pompones/IMG_0992.jpeg" alt="Pompón 10">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Pompón</p>
+                    <h3 class="product-title">Pompón #10</h3>
+                    <p class="product-price">€12</p>
+                </div>
+            </div>
+
+            <!-- PORTALABIALES (3 productos reales) -->
+            <div class="product-card" data-category="portalabiales" data-product-id="porta-1">
+                <div class="product-image">
+                    <img src="img/Portalabiales/IMG_0968.jpeg" alt="Portalabios 1">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Portalabios</p>
+                    <h3 class="product-title">Portalabios #1</h3>
+                    <p class="product-price">€18</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="portalabiales" data-product-id="porta-2">
+                <div class="product-image">
+                    <img src="img/Portalabiales/IMG_0969.jpeg" alt="Portalabios 2">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Portalabios</p>
+                    <h3 class="product-title">Portalabios #2</h3>
+                    <p class="product-price">€18</p>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="portalabiales" data-product-id="porta-3">
+                <div class="product-image">
+                    <img src="img/Portalabiales/IMG_0973.jpeg" alt="Portalabios 3">
+                    <div class="product-image-overlay"><button class="quick-add-btn">+</button></div>
+                </div>
+                <div class="product-info">
+                    <p class="product-category">Portalabios</p>
+                    <h3 class="product-title">Portalabios #3</h3>
+                    <p class="product-price">€18</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA PERSONALIZACIÓN -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>¿No encuentras lo que buscas?</h2>
+            <p>Creamos accesorios personalizados a medida.</p>
+            <a href="index.html#contacto" class="btn btn-secondary-outline" style="border-color: white; color: white;">Solicitar Personalización</a>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div>
+                    <h3 class="newsletter-title">Únete y entérate de nuevas piezas antes que nadie</h3>
+                    <p class="newsletter-subtitle">Solo novedades, sin spam.</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('¡Suscripción confirmada!');">
+                    <input type="email" placeholder="Tu email" required class="newsletter-input">
+                    <button type="submit" class="btn btn-primary">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EntreNudos</h4>
+                    <p>Creaciones únicas en macramé artesanal. Piezas boho hechas a mano con fibra natural.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="bolsos.html">Bolsos</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Política de Privacidad</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                        <li><a href="#">Política de Devoluciones</a></li>
+                        <li><a href="#">Envíos</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EntreNudos. Todos los derechos reservados.</p>
+                <p>Hecho con <span style="color: var(--terracota);">♥</span> en Madrid</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close">✕</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total"><span>Total</span><span>€0.00</span></div>
+            <button class="btn btn-primary">Ir al checkout</button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="script.js"></script>
+</body>
+</html>
