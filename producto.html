@@ -367,7 +367,10 @@
                     swatch.classList.add('active');
                     colorSeleccionado = swatch.getAttribute('data-color');
                     // Habilitar botón
-                    document.getElementById('addToCartBtn').disabled = false;
+                    const btn = document.getElementById('addToCartBtn');
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
                     console.log('Color seleccionado:', colorSeleccionado);
                 });
             });
