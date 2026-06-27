@@ -337,21 +337,24 @@ h1, h2, h3, section {
    ========================================== */
 
 .mobile-menu {
-    display: none !important;
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
     background: var(--white);
+    display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
     z-index: 9999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
 }
 
 .mobile-menu.active {
-    display: flex !important;
+    max-height: 500px;
 }
 
 .mobile-nav-link {
