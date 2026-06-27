@@ -346,7 +346,6 @@ h1, h2, h3, section {
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
-    border-bottom: 1px solid rgba(26, 20, 16, 0.05);
     z-index: 9999;
     max-height: 0;
     overflow: hidden;
