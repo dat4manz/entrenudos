@@ -540,14 +540,15 @@ h1, h2, h3, section {
 }
 
 .btn-detalle {
-    background: var(--sage);
-    color: var(--white);
-    border: none;
+    background: var(--white);
+    color: var(--sage);
+    border: 2px solid var(--sage);
 }
 
 .btn-detalle:hover {
-    background: var(--sage-dark);
+    background: var(--sage);
     color: var(--white);
+    border-color: var(--sage);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(107, 139, 126, 0.25);
 }
