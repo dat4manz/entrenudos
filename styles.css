@@ -337,24 +337,35 @@ h1, h2, h3, section {
    ========================================== */
 
 .mobile-menu {
-    position: fixed;
-    top: 348px;
-    left: 0;
-    right: 0;
-    background: var(--white);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    padding: var(--spacing-lg);
-    z-index: 99;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    display: none;
 }
 
 .mobile-menu.active {
-    max-height: 500px;
-    box-shadow: 0 4px 12px rgba(26, 20, 16, 0.1);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: flex;
+        position: fixed;
+        top: 348px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-lg);
+        z-index: 9999;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+        max-height: 500px;
+        box-shadow: 0 4px 12px rgba(26, 20, 16, 0.1);
+    }
 }
 
 .mobile-nav-link {
