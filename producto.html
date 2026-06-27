@@ -125,6 +125,51 @@
             cursor: not-allowed;
         }
 
+        .color-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .color-swatch {
+            aspect-ratio: 1;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: var(--transition-fast);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: var(--spacing-sm);
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .color-swatch.active {
+            border-color: var(--ink);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .color-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .color-swatch.active .color-name {
+            display: block;
+        }
+
         .product-details {
             padding: var(--spacing-lg) 0;
         }
@@ -223,14 +268,21 @@
 
                     <!-- COLOR -->
                     <div class="option-group">
-                        <label for="colorSelect" class="option-label">Color</label>
-                        <select id="colorSelect" class="option-select">
-                            <option value="">Selecciona un color</option>
-                            <option value="natural">Natural (Blanco crudo)</option>
-                            <option value="beige">Beige</option>
-                            <option value="gris">Gris</option>
-                            <option value="marron">Marrón</option>
-                        </select>
+                        <label class="option-label">Color</label>
+                        <div class="color-swatches">
+                            <div class="color-swatch" data-color="natural" style="background-color: #F5F0E8;" title="Natural">
+                                <span class="color-name">Natural</span>
+                            </div>
+                            <div class="color-swatch" data-color="beige" style="background-color: #D9CCC0;" title="Beige">
+                                <span class="color-name">Beige</span>
+                            </div>
+                            <div class="color-swatch" data-color="gris" style="background-color: #B8B8B8;" title="Gris">
+                                <span class="color-name">Gris</span>
+                            </div>
+                            <div class="color-swatch" data-color="marron" style="background-color: #8B6F47;" title="Marrón">
+                                <span class="color-name">Marrón</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- TAMAÑO -->
@@ -338,9 +390,15 @@
                 }
             });
 
-            // Listeners para color y tamaño
-            document.getElementById('colorSelect').addEventListener('change', (e) => {
-                colorSeleccionado = e.target.value;
+            // Listeners para colores (swatches)
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.addEventListener('click', () => {
+                    // Remover clase active de todos
+                    document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+                    // Añadir a este
+                    swatch.classList.add('active');
+                    colorSeleccionado = swatch.getAttribute('data-color');
+                });
             });
 
             // Cargar primera imagen
@@ -372,7 +430,8 @@
                 return;
             }
 
-            const colorLabel = document.getElementById('colorSelect').selectedOptions[0].text;
+            const colorSwatch = document.querySelector(`.color-swatch.active`);
+            const colorLabel = colorSwatch?.querySelector('.color-name')?.textContent || colorSeleccionado;
             const varianteNum = varianteSeleccionada.index + 1;
 
             const item = {
