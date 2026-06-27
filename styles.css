@@ -4,21 +4,21 @@
    ========================================== */
 
 :root {
-    /* Paleta moderna mejorada */
+    /* Paleta moderna mejorada - Verde Premium */
     --bg: #FAFAF8;                    /* Off-white more refined */
     --ink: #1A1410;                   /* Deeper, richer black */
-    --brown: #6B4423;                 /* Richer, more sophisticated brown */
-    --brown-light: #8B5C3E;           /* Medium brown for accents */
-    --terracota: #C97858;             /* More vibrant, deeper terracota */
-    --sage: #7A8B6F;                  /* More muted, refined sage */
-    --sage-dark: #5A6B4F;             /* Deeper sage */
+    --brown: #006847;                 /* Verde principal sostenible */
+    --brown-light: #00845F;           /* Verde más claro */
+    --terracota: #2BC75E;             /* Verde brillante para acentos */
+    --sage: #007D54;                  /* Verde refinado */
+    --sage-dark: #005C3F;             /* Verde oscuro */
     --cream: #F5F0E8;                 /* Premium cream */
     --beige: #D9CCC0;                 /* More sophisticated beige */
-    --accent: #D97858;                /* Modern accent (matches improved terracota) */
+    --accent: #2BC75E;                /* Modern accent (green) */
     --white: #FFFFFF;
 
     /* Gradients */
-    --grad-warm: linear-gradient(135deg, #C97858 0%, #8B5C3E 100%);
+    --grad-warm: linear-gradient(135deg, #2BC75E 0%, #006847 100%);
     --grad-subtle: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
 
     /* Spacing system */
@@ -123,12 +123,15 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    width: 100%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* ==========================================
@@ -1462,6 +1465,10 @@ img {
 }
 
 @media (max-width: 768px) {
+    .newsletter-section {
+        padding: var(--spacing-2xl) var(--spacing-sm);
+    }
+
     .newsletter-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1966,7 +1973,12 @@ img {
     }
 
     .container {
-        padding: 0 var(--spacing-md);
+        padding: 0 var(--spacing-sm);
+        max-width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 
     .hero-title {
