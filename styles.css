@@ -131,6 +131,10 @@ img {
     width: 100%;
 }
 
+h1, h2, h3, section {
+    scroll-margin-top: 90px;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -328,24 +332,21 @@ img {
    ========================================== */
 
 .mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: flex;
     position: fixed;
     top: 70px;
     left: 0;
     right: 0;
     background: var(--white);
-    display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
     box-shadow: var(--shadow-lg);
     z-index: 200;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.mobile-menu.active {
-    max-height: 300px;
 }
 
 .mobile-nav-link {
