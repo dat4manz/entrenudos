@@ -416,7 +416,7 @@ h1, h2, h3, section {
     gap: var(--spacing-3xl);
     align-items: center;
     padding: var(--spacing-3xl) 0;
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-2xl) auto;
 }
 
 .hero-content {
@@ -1077,7 +1077,7 @@ h1, h2, h3, section {
     gap: var(--spacing-3xl);
     align-items: center;
     padding: var(--spacing-3xl) 0;
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-2xl) auto;
 }
 
 .history-image {
@@ -1094,7 +1094,7 @@ h1, h2, h3, section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-2xl);
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-2xl) auto;
 }
 
 .testimonial-card {
@@ -1164,7 +1164,7 @@ h1, h2, h3, section {
     padding: var(--spacing-3xl);
     border-radius: var(--radius-lg);
     text-align: center;
-    margin: var(--spacing-3xl) 0;
+    margin: var(--spacing-3xl) auto;
     box-shadow: var(--shadow-xl);
 }
 
@@ -1187,7 +1187,7 @@ h1, h2, h3, section {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-3xl);
     padding: var(--spacing-3xl) 0;
-    margin: var(--spacing-2xl) 0;
+    margin: var(--spacing-2xl) auto;
 }
 
 .contact-form {
