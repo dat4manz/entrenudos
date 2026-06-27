@@ -7,18 +7,18 @@
     /* Paleta moderna mejorada - Verde Premium */
     --bg: #FAFAF8;                    /* Off-white more refined */
     --ink: #1A1410;                   /* Deeper, richer black */
-    --brown: #006847;                 /* Verde principal sostenible */
-    --brown-light: #00845F;           /* Verde más claro */
+    --brown: #809680;                 /* Verde principal sostenible */
+    --brown-light: #9DADB7;           /* Verde más claro */
     --terracota: #2BC75E;             /* Verde brillante para acentos */
-    --sage: #007D54;                  /* Verde refinado */
-    --sage-dark: #005C3F;             /* Verde oscuro */
+    --sage: #6B8B7E;                  /* Verde refinado */
+    --sage-dark: #596D63;             /* Verde oscuro */
     --cream: #F5F0E8;                 /* Premium cream */
     --beige: #D9CCC0;                 /* More sophisticated beige */
     --accent: #2BC75E;                /* Modern accent (green) */
     --white: #FFFFFF;
 
     /* Gradients */
-    --grad-warm: linear-gradient(135deg, #2BC75E 0%, #006847 100%);
+    --grad-warm: linear-gradient(135deg, #A0B5A0 0%, #809680 100%);
     --grad-subtle: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
 
     /* Spacing system */
