@@ -261,13 +261,14 @@ document.querySelectorAll('.quick-add-btn').forEach(btn => {
         e.stopPropagation();
 
         const card = btn.closest('.product-card');
-        const productId = card?.getAttribute('data-product-id') || 'unknown';
-        const variantId = card?.getAttribute('data-variant-id') || '0';
-        const productName = card?.querySelector('.product-title')?.textContent || 'Producto';
-        const priceText = card?.querySelector('.product-price')?.textContent || '0';
-        const price = parseFloat(priceText.replace('€', ''));
+        const productId = card?.getAttribute('data-product-id');
+        const productUrl = card?.getAttribute('data-product-url') ||
+                          card?.querySelector('a')?.getAttribute('href') ||
+                          (productId ? `producto.html?id=${productId}` : null);
 
-        ShopifyCart.addItem(productId, variantId, 1, productName, price);
+        if (productUrl) {
+            window.location.href = productUrl;
+        }
     });
 });
 
