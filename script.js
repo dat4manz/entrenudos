@@ -179,7 +179,7 @@ function updateCartDisplay() {
     cartItems.innerHTML = AppState.cartItems.map((item, index) => {
         total += item.price * item.qty;
         return `
-            <div class="cart-item">
+            <div class="cart-item" data-index="${index}">
                 <div class="cart-item-image" style="background: linear-gradient(135deg, var(--beige), var(--bg));">
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: var(--beige); font-size: 12px;">Foto</div>
                 </div>
@@ -188,10 +188,21 @@ function updateCartDisplay() {
                     <div class="cart-item-price">€${(item.price * item.qty).toFixed(2)}</div>
                     <div style="font-size: 12px; color: var(--ink); opacity: 0.6;">Cantidad: ${item.qty}</div>
                 </div>
-                <button class="cart-item-remove" onclick="AppState.cartItems.splice(${index}, 1); updateCartDisplay();" style="background: none; border: none; color: var(--sage-dark); font-size: 20px; cursor: pointer; padding: 8px; transition: var(--transition-fast);" title="Eliminar">✕</button>
+                <button class="cart-item-remove" style="background: none; border: none; color: var(--sage-dark); font-size: 20px; cursor: pointer; padding: 8px; transition: var(--transition-fast);" title="Eliminar">✕</button>
             </div>
         `;
     }).join('');
+
+    // Event delegation para eliminar items
+    document.querySelectorAll('.cart-item-remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const cartItem = btn.closest('.cart-item');
+            const index = parseInt(cartItem.getAttribute('data-index'));
+            AppState.cartItems.splice(index, 1);
+            updateCartDisplay();
+        });
+    });
 
     const cartFooter = document.querySelector('.cart-footer');
     if (cartFooter) {
@@ -263,6 +274,23 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
 // QUICK ADD (TIENDA)
 // ==========================================
 
+// Click en foto para ir a producto
+document.querySelectorAll('.product-image').forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+        const card = img.closest('.product-card');
+        const productId = card?.getAttribute('data-product-id');
+        const productUrl = card?.getAttribute('data-product-url') ||
+                          card?.querySelector('a')?.getAttribute('href') ||
+                          (productId ? `producto.html?id=${productId}` : null);
+
+        if (productUrl) {
+            window.location.href = productUrl;
+        }
+    });
+});
+
+// Quick-add button (center button)
 document.querySelectorAll('.quick-add-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
